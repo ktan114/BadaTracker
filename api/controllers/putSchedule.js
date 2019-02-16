@@ -10,7 +10,7 @@ const putSchedule = (req, res) => {
   const { id } = req.params;
   const updateSchedule = req.body;
 
-  Schedule.findOneAndRemove({ id }, updateSchedule)
+  Schedule.findOneAndUpdate({ id }, updateSchedule)
     .then(schedule => res.status(200).json({ schedule }))
     .catch(err => res.status(500).json({ err, message: 'Error' }));
 };
