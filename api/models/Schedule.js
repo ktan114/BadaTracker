@@ -9,7 +9,7 @@ const ScheduleSchema = new Schema({
         default: Date.now
     },
     medicine: {
-        type: boolean,
+        type: Boolean,
         default: false
     },
     trips: {
