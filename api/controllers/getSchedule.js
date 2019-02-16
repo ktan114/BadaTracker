@@ -1,7 +1,7 @@
 const Schedule = require('../models/Schedule');
 
 /*
-    @route  GET api/schedule/:id
+    @route  GET api/schedules/:id
     @desc   Retrieves the specific schedule for that date
     @access Public (Development) | Private (Production)
 */
