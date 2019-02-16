@@ -3,7 +3,7 @@ const {
   getAllSchedule,
   postSchedule,
   putSchedule,
-} = require('../controllers');
+} = require('../controllers/schedules');
 
 module.exports = server => {
   server.route('/api/schedules/:id').get(getSchedule);

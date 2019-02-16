@@ -1,4 +1,4 @@
-const Schedule = require('../models/Schedule');
+const Schedule = require('../../models/Schedule');
 
 /*
     @route  POST api/schedules
