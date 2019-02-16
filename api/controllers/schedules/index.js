@@ -1,11 +1,11 @@
 const { getSchedule } = require('./getSchedule');
-const { getAllSchedule } = require('./getAllSchedule');
+const { getAllSchedules } = require('./getAllSchedules');
 const { postSchedule } = require('./postSchedule');
 const { putSchedule } = require('./putSchedule');
 
 module.exports = {
     getSchedule,
-    getAllSchedule,
+    getAllSchedules,
     postSchedule,
     putSchedule
 }

@@ -9,7 +9,8 @@ const Schedule = require('../../models/Schedule');
 const getSchedule = (req, res) => {
   const { id } = req.params;
 
-  Schedule.findOne({ _id: id })
+  Schedule
+    .findOne(id)
     .then(schedule => res.status(200).json({ schedule }))
     .catch(err => res.status(500).json({ err, message: 'Error' }));
 };
