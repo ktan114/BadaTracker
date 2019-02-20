@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import DateDisplay from '../DateDisplay/DateDisplay';
+
 class Schedule extends Component {
     constructor(props) {
         super(props);
@@ -10,10 +12,9 @@ class Schedule extends Component {
 
     render() {
         const { schedule } = this.state;
-        const date = new Date(schedule.currentDate);
         return (
             <div>
-                
+                <DateDisplay strDate={ schedule.currentDate } />
             </div>
         )
     }
