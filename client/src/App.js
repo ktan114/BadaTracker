@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './App.css';
+import Schedule from './components/Schedule/Schedule';
 
 const apiPath = require('./config/API.json');
 
@@ -18,11 +19,9 @@ class App extends Component {
   }
 
   getAllSchedules = () => {
-
     axios
       .get(`${apiPath[apiPath.basePath]}api/schedules`)
       .then(res => {
-        console.log('Found', res);
         this.setState({ schedules: res.data.schedules });
       })
       .catch(err => console.log('Error'));
@@ -31,16 +30,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Hello World</p>
+        <h1>BadaTracker</h1>
         <div>
           {this.state.schedules.map(schedule => {
-            let date = new Date(schedule.currentDate)
-            console.log("Schedule", date.getMonth())
             return (
-              <React.Fragment key={ schedule._id }>
-                <h1>Medicine: {`${ schedule.medicine}`}</h1>
-                <h1>Trips Outside: { schedule.trips }</h1>
-                <h1>Date: { date.getMonth()+1 + "/" + date.getDate() + "/" + date.getFullYear() }</h1>
+              <React.Fragment key={schedule._id}>
+                <Schedule
+                  schedule={schedule}
+                  getAllSchedules={this.getAllSchedules}
+                />
               </React.Fragment>
             );
           })}
