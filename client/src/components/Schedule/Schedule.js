@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import DateDisplay from '../DateDisplay/DateDisplay';
 import Medicine from '../Medicine/Medicine';
 import Trips from '../Trips/Trips';
+
+const apiPath = require('../../config/API.json');
 
 class Schedule extends Component {
   constructor(props) {
@@ -22,6 +25,7 @@ class Schedule extends Component {
       medicine: !state.medicine,
       schedule: stateSchedule,
     }));
+    this.updateDatabase(stateSchedule._id, stateSchedule);
   };
 
   handleIncrement = () => {
@@ -31,6 +35,7 @@ class Schedule extends Component {
       schedule: stateSchedule,
       trips: stateSchedule.trips,
     }));
+    this.updateDatabase(stateSchedule._id, stateSchedule);
   };
 
   handleDecrement = () => {
@@ -41,6 +46,16 @@ class Schedule extends Component {
       schedule: stateSchedule,
       trips: stateSchedule.trips,
     }));
+    this.updateDatabase(stateSchedule._id, stateSchedule);
+  };
+
+  updateDatabase = (id, updatedSchedule) => {
+    axios
+      .put(`${apiPath[apiPath.basePath]}api/schedules/${id}`, {
+        schedule: updatedSchedule,
+      })
+      .then(res => console.log('Success!', res))
+      .catch(() => console.log('Error'));
   };
 
   render() {
