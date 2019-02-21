@@ -9,15 +9,25 @@ class Schedule extends Component {
     super(props);
     this.state = {
       schedule: props.schedule,
+      medicine: props.schedule.medicine,
     };
   }
 
+  handleMedicine = () => {
+    const stateSchedule = this.state.schedule;
+    stateSchedule.medicine = !stateSchedule.medicine;
+    this.setState((state, props) => ({
+      medicine: !state.medicine,
+      schedule: stateSchedule
+    }));
+  };
+
   render() {
-    const { schedule } = this.state;
+    const { schedule, medicine } = this.state;
     return (
       <div>
         <DateDisplay strDate={schedule.currentDate} />
-        <Medicine medicine={schedule.medicine} />
+        <Medicine medicine={medicine} handleMedicine={this.handleMedicine} />
       </div>
     );
   }
