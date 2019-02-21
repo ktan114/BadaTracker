@@ -51,10 +51,8 @@ class Schedule extends Component {
 
   updateDatabase = (id, updatedSchedule) => {
     axios
-      .put(`${apiPath[apiPath.basePath]}api/schedules/${id}`, {
-        schedule: updatedSchedule,
-      })
-      .then(res => console.log('Success!', res))
+      .put(`${apiPath[apiPath.basePath]}api/schedules/${id}`, updatedSchedule)
+      .then(() => console.log('Success!'))
       .catch(() => console.log('Error'));
   };
 
