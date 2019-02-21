@@ -6,7 +6,7 @@ const DateDisplay = props => {
   const date = new Date(strDate);
   return (
     <div>
-      <h1>{'Date: ' + (date.getMonth()+1) + '/' + date.getDay() + '/' + date.getFullYear()}</h1>
+      <h1>{'Date: ' + (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear()}</h1>
     </div>
   );
 };
