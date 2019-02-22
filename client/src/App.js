@@ -27,10 +27,23 @@ class App extends Component {
       .catch(err => console.log('Error'));
   };
 
+  createASchedule = () => {
+    axios
+      .post(`${apiPath[apiPath.basePath]}api/schedules`)
+      .then(() => {
+        console.log('Success');
+        this.getAllSchedules();
+      })
+      .catch(err => console.log('Error'));
+  };
+
   render() {
     return (
       <div className="App">
-        <h1>BadaTracker</h1>
+        <h1>Bada Tracker</h1>
+        <button onClick={this.createASchedule}>
+          Create A New Schedule For Today
+        </button>
         <div>
           {this.state.schedules.map(schedule => {
             return (
