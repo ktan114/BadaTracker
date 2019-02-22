@@ -10,7 +10,7 @@ const getSchedule = (req, res) => {
   const { id } = req.params;
 
   Schedule
-    .findOne(id)
+    .findById(id)
     .then(schedule => res.status(200).json({ schedule }))
     .catch(err => res.status(500).json({ err, message: 'Error' }));
 };
