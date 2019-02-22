@@ -25,7 +25,11 @@ class Schedule extends Component {
       medicine: !state.medicine,
       schedule: stateSchedule,
     }));
-    this.updateDatabase(stateSchedule._id, stateSchedule);
+    const { medicine, trips } = stateSchedule;
+    this.updateDatabase(stateSchedule._id, {
+      medicine: medicine,
+      trips: trips,
+    });
   };
 
   handleIncrement = () => {
@@ -35,7 +39,11 @@ class Schedule extends Component {
       schedule: stateSchedule,
       trips: stateSchedule.trips,
     }));
-    this.updateDatabase(stateSchedule._id, stateSchedule);
+    const { medicine, trips } = stateSchedule;
+    this.updateDatabase(stateSchedule._id, {
+      medicine: medicine,
+      trips: trips,
+    });
   };
 
   handleDecrement = () => {
@@ -46,14 +54,18 @@ class Schedule extends Component {
       schedule: stateSchedule,
       trips: stateSchedule.trips,
     }));
-    this.updateDatabase(stateSchedule._id, stateSchedule);
+    const { medicine, trips } = stateSchedule;
+    this.updateDatabase(stateSchedule._id, {
+      medicine: medicine,
+      trips: trips,
+    });
   };
 
   updateDatabase = (id, updatedSchedule) => {
     axios
       .put(`${apiPath[apiPath.basePath]}api/schedules/${id}`, updatedSchedule)
       .then(() => console.log('Success!'))
-      .catch(() => console.log('Error'));
+      .catch(err => console.log('Error', err));
   };
 
   render() {
