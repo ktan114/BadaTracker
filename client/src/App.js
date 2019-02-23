@@ -31,7 +31,6 @@ class App extends Component {
     axios
       .post(`${apiPath[apiPath.basePath]}api/schedules`)
       .then(() => {
-        console.log('Success');
         this.getAllSchedules();
       })
       .catch(err => console.log('Error'));
@@ -45,16 +44,19 @@ class App extends Component {
           Create A New Schedule For Today
         </button>
         <div>
-          {this.state.schedules.map(schedule => {
-            return (
-              <React.Fragment key={schedule._id}>
-                <Schedule
-                  schedule={schedule}
-                  getAllSchedules={this.getAllSchedules}
-                />
-              </React.Fragment>
-            );
-          })}
+          {this.state.schedules
+            .slice(0)
+            .reverse()
+            .map(schedule => {
+              return (
+                <React.Fragment key={schedule._id}>
+                  <Schedule
+                    schedule={schedule}
+                    getAllSchedules={this.getAllSchedules}
+                  />
+                </React.Fragment>
+              );
+            })}
         </div>
       </div>
     );
