@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
 
 import './App.css';
 import Schedule from './components/Schedule/Schedule';
+import AllSchedules from './components/AllSchedules/AllSchedules';
 
 const apiPath = require('./config/API.json');
 
@@ -37,27 +39,21 @@ class App extends Component {
   };
 
   render() {
+    const { schedules } = this.state;
     return (
       <div className="App">
         <h1>Bada Tracker</h1>
-        <button onClick={this.createASchedule}>
-          Create A New Schedule For Today
-        </button>
-        <div>
-          {this.state.schedules
-            .slice(0)
-            .reverse()
-            .map(schedule => {
-              return (
-                <React.Fragment key={schedule._id}>
-                  <Schedule
-                    schedule={schedule}
-                    getAllSchedules={this.getAllSchedules}
-                  />
-                </React.Fragment>
-              );
-            })}
-        </div>
+        <Link to="/">
+          <button onClick={this.createASchedule}>
+            Create A New Schedule For Today
+          </button>
+        </Link>
+        <Route
+          exact
+          path="/"
+          render={props => <AllSchedules {...props} schedules={schedules} />}
+        />
+        <Route path="/schedules/:id" component={Schedule} />
       </div>
     );
   }
