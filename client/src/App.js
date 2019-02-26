@@ -1,0 +1,62 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
+
+import './App.css';
+import Schedule from './components/Schedule/Schedule';
+import AllSchedules from './components/AllSchedules/AllSchedules';
+
+const apiPath = require('./config/API.json');
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      schedules: [],
+    };
+  }
+
+  componentDidMount() {
+    this.getAllSchedules();
+  }
+
+  getAllSchedules = () => {
+    axios
+      .get(`${apiPath[apiPath.basePath]}api/schedules`)
+      .then(res => {
+        this.setState({ schedules: res.data.schedules });
+      })
+      .catch(err => console.log('Error'));
+  };
+
+  createASchedule = () => {
+    axios
+      .post(`${apiPath[apiPath.basePath]}api/schedules`)
+      .then(() => {
+        this.getAllSchedules();
+      })
+      .catch(err => console.log('Error'));
+  };
+
+  render() {
+    const { schedules } = this.state;
+    return (
+      <div className="App">
+        <h1>Bada Tracker</h1>
+        <Link to="/">
+          <button onClick={this.createASchedule}>
+            Create A New Schedule For Today
+          </button>
+        </Link>
+        <Route
+          exact
+          path="/"
+          render={props => <AllSchedules {...props} schedules={schedules} />}
+        />
+        <Route path="/schedules/:id" component={Schedule} />
+      </div>
+    );
+  }
+}
+
+export default App;
