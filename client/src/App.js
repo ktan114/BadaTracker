@@ -25,6 +25,17 @@ class App extends Component {
       .get(`${apiPath[apiPath.basePath]}api/schedules`)
       .then(res => {
         this.setState({ schedules: res.data.schedules });
+        if (this.state.schedules.length > 0) {
+          const lastSchedule = this.state.schedules[
+            this.state.schedules.length - 1
+          ];
+          const lastDate = new Date(lastSchedule.currentDate).getDate();
+          const currentDate = new Date().getDate();
+          if (lastDate !== currentDate) this.createASchedule();
+        }
+        else {
+          this.createASchedule();
+        }
       })
       .catch(err => console.log('Error'));
   };
