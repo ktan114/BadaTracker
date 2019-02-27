@@ -100,6 +100,7 @@ class Schedule extends Component {
 
 Schedule.propTypes = {
   id: PropTypes.string.isRequired,
+  getAllSchedules: PropTypes.func.isRequired
 };
 
 export default Schedule;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import DateDisplay from '../DateDisplay/DateDisplay';
@@ -38,5 +39,10 @@ const AllSchedules = props => {
     </div>
   );
 };
+
+AllSchedules.propTypes = {
+  schedules: PropTypes.array.isRequired,
+  getAllSchedules : PropTypes.func.isRequired
+}
 
 export default AllSchedules;
