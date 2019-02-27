@@ -1,19 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+
+const apiPath = require('../../config/API.json');
 
 const DeleteSchedule = props => {
+  const handleDelete = id => {
+    axios
+      .delete(`${apiPath[apiPath.basePath]}api/schedules/${id}`)
+      .then(() => {
+        props.getAllSchedules();
+      })
+      .catch(() => console.log('Error'));
+  };
+
+  const deleteMark = {
+    border: 'none',
+    fontSize: '30px',
+    color: 'red',
+    fontWeight: 'bold',
+  };
+
+  const deleteLink = {
+    border: 'none',
+    textDecoration: 'underline',
+    fontSize: '20px',
+    marginTop: '12px',
+    marginLeft: '10%'
+  };
+
   return (
-    <div style={{ marginTop: '20px', marginLeft: '1%' }}>
+    <div style={{ marginTop: '8px', marginLeft: '1%' }}>
       <button
-        style={{
-          border: 'none',
-          fontSize: '30px',
-          color: 'red',
-          fontWeight: 'bold',
-        }}
-        onClick={() => props.handleDelete(props.id)}
+        style={props.delete ? deleteMark : deleteLink}
+        onClick={() => handleDelete(props.id)}
       >
-        &times;
+        {props.delete ? <React.Fragment>&times;</React.Fragment> : 'Delete'}
       </button>
     </div>
   );
@@ -21,7 +43,7 @@ const DeleteSchedule = props => {
 
 DeleteSchedule.propTypes = {
   id: PropTypes.string.isRequired,
-  handleDelete: PropTypes.func.isRequired,
+  getAllSchedules: PropTypes.func.isRequired,
 };
 
 export default DeleteSchedule;
