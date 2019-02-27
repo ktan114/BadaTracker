@@ -81,7 +81,7 @@ class Schedule extends Component {
           <button
             style={{ marginTop: '20px', border: 'none', fontSize: '20px' }}
           >
-            <Link style={{ color: 'black' }} to="/">
+            <Link onClick={this.props.getAllSchedules} style={{ color: 'black' }} to="/">
               Back
             </Link>
           </button>
