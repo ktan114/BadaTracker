@@ -6,7 +6,7 @@ const Medicine = props => {
     <div>
       <label htmlFor="medicine">Medicine: </label>
       <input
-        onChange={props.handleMedicine}
+        onChange={() => props.handleClick('medicine')}
         type="checkbox"
         name="medicine"
         checked={props.medicine}
@@ -17,7 +17,7 @@ const Medicine = props => {
 
 Medicine.propTypes = {
   medicine: PropTypes.bool.isRequired,
-  handleMedicine: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default Medicine;

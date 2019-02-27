@@ -44,6 +44,7 @@ const DeleteSchedule = props => {
 DeleteSchedule.propTypes = {
   id: PropTypes.string.isRequired,
   getAllSchedules: PropTypes.func.isRequired,
+  delete: PropTypes.bool.isRequired
 };
 
 export default DeleteSchedule;

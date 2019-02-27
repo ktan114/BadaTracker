@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import DateDisplay from '../DateDisplay/DateDisplay';
 import DeleteSchedule from '../DeleteSchedule/DeleteSchedule';
+import compareDate from '../../helpers/compareDate';
 
 const AllSchedules = props => {
   return (
@@ -11,19 +13,23 @@ const AllSchedules = props => {
         .slice(0)
         .reverse()
         .map(schedule => {
+          let color = 'grey';
+          const {_id, currentDate, medicine, trips } = schedule;
+          if (medicine && trips >= 2) color = 'green';
+          if (compareDate(new Date(schedule.currentDate), new Date()) && (!medicine || trips < 2)) color = 'red';
           return (
             <div
-              key={schedule._id}
+              key={_id}
               style={{ display: 'flex', justifyContent: 'center' }}
             >
               <Link
-                style={{ textDecoration: 'none' }}
-                to={`/schedules/${schedule._id}`}
+                style={{ textDecoration: 'none', color: color }}
+                to={`/schedules/${_id}`}
               >
-                <DateDisplay strDate={schedule.currentDate} />
+                <DateDisplay strDate={currentDate} />
               </Link>
               <DeleteSchedule
-                id={schedule._id}
+                id={_id}
                 getAllSchedules={props.getAllSchedules}
                 delete={true}
               />
@@ -33,5 +39,10 @@ const AllSchedules = props => {
     </div>
   );
 };
+
+AllSchedules.propTypes = {
+  schedules: PropTypes.array.isRequired,
+  getAllSchedules : PropTypes.func.isRequired
+}
 
 export default AllSchedules;
