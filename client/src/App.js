@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import Schedule from './components/Schedule/Schedule';
 import AllSchedules from './components/AllSchedules/AllSchedules';
+import compareDate from './helpers/compareDate'
 
 const apiPath = require('./config/API.json');
 
@@ -29,9 +30,7 @@ class App extends Component {
           const lastSchedule = this.state.schedules[
             this.state.schedules.length - 1
           ];
-          const lastDate = new Date(lastSchedule.currentDate).getDate();
-          const currentDate = new Date().getDate();
-          if (lastDate !== currentDate) this.createASchedule();
+          if (compareDate(new Date(lastSchedule.currentDate), new Date())) this.createASchedule();
         }
         else {
           this.createASchedule();
