@@ -23,30 +23,18 @@ class Schedule extends Component {
     this.getSchedule(this.state.id);
   }
 
-  handleMedicine = () => {
-    const stateSchedule = this.state.schedule;
-    stateSchedule.medicine = !stateSchedule.medicine;
-    this.setState((state, props) => ({
-      medicine: !state.medicine,
-      schedule: stateSchedule,
-    }));
-    const { medicine, trips } = stateSchedule;
-    this.updateDatabase(stateSchedule._id, {
-      medicine: medicine,
-      trips: trips,
-    });
-  };
-
   handleClick = value => {
     const stateSchedule = this.state.schedule;
-    if (stateSchedule.trips === 0 && value === -1) stateSchedule.trips = 0;
-    else stateSchedule.trips += value;
+    if (value === 'medicine') stateSchedule.medicine = !stateSchedule.medicine;
+    else {
+      if (stateSchedule.trips === 0 && value === -1) stateSchedule.trips = 0;
+      else stateSchedule.trips += value;
+    }
+    const { medicine, trips, _id } = stateSchedule;
     this.setState((state, props) => ({
       schedule: stateSchedule,
-      trips: stateSchedule.trips,
     }));
-    const { medicine, trips } = stateSchedule;
-    this.updateDatabase(stateSchedule._id, {
+    this.updateDatabase(_id, {
       medicine: medicine,
       trips: trips,
     });
@@ -75,13 +63,17 @@ class Schedule extends Component {
     return (
       <div>
         <DateDisplay strDate={currentDate} />
-        <Medicine medicine={medicine} handleMedicine={this.handleMedicine} />
+        <Medicine medicine={medicine} handleClick={this.handleClick} />
         <Trips trips={trips} handleClick={this.handleClick} />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <button
             style={{ marginTop: '20px', border: 'none', fontSize: '20px' }}
           >
-            <Link onClick={this.props.getAllSchedules} style={{ color: 'black' }} to="/">
+            <Link
+              onClick={this.props.getAllSchedules}
+              style={{ color: 'black' }}
+              to="/"
+            >
               Back
             </Link>
           </button>
@@ -100,7 +92,7 @@ class Schedule extends Component {
 
 Schedule.propTypes = {
   id: PropTypes.string.isRequired,
-  getAllSchedules: PropTypes.func.isRequired
+  getAllSchedules: PropTypes.func.isRequired,
 };
 
 export default Schedule;
