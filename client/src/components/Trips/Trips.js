@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 const Trips = props => {
 
   const styleButton = {
-    borderRadius: '50%',
-    fontSize: '40px',
-    width: '20%'
+    border: 'none',
+    fontSize: '50px',
+    width: '20%',
   }
 
   return (
