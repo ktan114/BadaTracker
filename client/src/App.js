@@ -51,9 +51,20 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={props => <AllSchedules {...props} schedules={schedules} />}
+          render={props => (
+            <AllSchedules
+              {...props}
+              schedules={schedules}
+              getAllSchedules={this.getAllSchedules}
+            />
+          )}
         />
-        <Route path="/schedules/:id" component={Schedule} />
+        <Route
+          path="/schedules/:id"
+          render={props => (
+            <Schedule {...props} getAllSchedules={this.getAllSchedules} />
+          )}
+        />
       </div>
     );
   }

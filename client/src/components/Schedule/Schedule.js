@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import DateDisplay from '../DateDisplay/DateDisplay';
 import Medicine from '../Medicine/Medicine';
 import Trips from '../Trips/Trips';
+import DeleteSchedule from '../DeleteSchedule/DeleteSchedule';
 
 const apiPath = require('../../config/API.json');
 
@@ -38,7 +39,8 @@ class Schedule extends Component {
 
   handleClick = value => {
     const stateSchedule = this.state.schedule;
-    stateSchedule.trips += value;
+    if (stateSchedule.trips === 0 && value === -1) stateSchedule.trips = 0;
+    else stateSchedule.trips += value;
     this.setState((state, props) => ({
       schedule: stateSchedule,
       trips: stateSchedule.trips,
@@ -69,15 +71,28 @@ class Schedule extends Component {
   };
 
   render() {
-    const { medicine, trips, currentDate } = this.state.schedule;
+    const { medicine, trips, currentDate, _id } = this.state.schedule;
     return (
       <div>
         <DateDisplay strDate={currentDate} />
         <Medicine medicine={medicine} handleMedicine={this.handleMedicine} />
         <Trips trips={trips} handleClick={this.handleClick} />
-        <button style={{ marginTop: '20px', border: 'none', fontSize: '20px' }}>
-          <Link to="/">Back</Link>
-        </button>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button
+            style={{ marginTop: '20px', border: 'none', fontSize: '20px' }}
+          >
+            <Link style={{ color: 'black' }} to="/">
+              Back
+            </Link>
+          </button>
+          <Link to="/">
+            <DeleteSchedule
+              id={_id}
+              getAllSchedules={this.props.getAllSchedules}
+              delete={false}
+            />
+          </Link>
+        </div>
       </div>
     );
   }

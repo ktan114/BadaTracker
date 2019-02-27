@@ -15,7 +15,7 @@ const DateDisplay = props => {
   ];
   return (
     <div>
-      <h1>
+      <h3>
         {'Date: ' +
           dayArray[date.getDay()] +
           ', ' +
@@ -24,7 +24,7 @@ const DateDisplay = props => {
           date.getDate() +
           '/' +
           date.getFullYear()}
-      </h1>
+      </h3>
     </div>
   );
 };

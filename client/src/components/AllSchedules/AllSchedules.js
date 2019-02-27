@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import DateDisplay from '../DateDisplay/DateDisplay';
+import DeleteSchedule from '../DeleteSchedule/DeleteSchedule';
 
 const AllSchedules = props => {
   return (
@@ -11,14 +12,22 @@ const AllSchedules = props => {
         .reverse()
         .map(schedule => {
           return (
-            <React.Fragment key={schedule._id}>
+            <div
+              key={schedule._id}
+              style={{ display: 'flex', justifyContent: 'center' }}
+            >
               <Link
                 style={{ textDecoration: 'none' }}
                 to={`/schedules/${schedule._id}`}
               >
                 <DateDisplay strDate={schedule.currentDate} />
               </Link>
-            </React.Fragment>
+              <DeleteSchedule
+                id={schedule._id}
+                getAllSchedules={props.getAllSchedules}
+                delete={true}
+              />
+            </div>
           );
         })}
     </div>
