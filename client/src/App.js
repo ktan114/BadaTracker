@@ -54,7 +54,7 @@ class App extends Component {
       <div className="App">
         <h1>Bada Tracker</h1>
         <Link to="/">
-          <button onClick={this.createASchedule}>
+          <button className="btn btn-secondary" onClick={this.createASchedule}>
             Create A New Schedule For Today
           </button>
         </Link>
