@@ -8,7 +8,7 @@ import compareDate from '../../helpers/compareDate';
 
 const AllSchedules = props => {
   return (
-    <div>
+    <div className="Schedules">
       {props.schedules
         .slice(0)
         .reverse()
