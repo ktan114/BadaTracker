@@ -22,10 +22,7 @@ const AllSchedules = props => {
           )
             linkColor = 'Schedules__Links--red';
           return (
-            <div
-              key={_id}
-              className="Schedules__Display"
-            >
+            <div key={_id} className="Schedules__Display">
               <Link
                 className={`Schedules__Links ${linkColor}`}
                 to={`/schedules/${_id}`}

@@ -138,23 +138,52 @@ code {
 }
 .Schedules__Links {
   text-decoration: none;
+  font-size: 1.5rem;
 }
-.Schedules__Links--grey {
+.Schedules__Links:hover {
+  text-decoration: none;
+}
+.Schedules__Links--grey,
+.Schedules__Links--grey:hover {
   color: grey;
 }
-.Schedules__Links--green {
+.Schedules__Links--green,
+.Schedules__Links--green:hover {
   color: green;
 }
-.Schedules__Links--red {
+.Schedules__Links--red,
+.Schedules__Links--red:hover {
+  color: red;
+}
+.Delete {
+  margin-left: 2%;
+}
+.Delete__Button {
+  border: none;
+  background: none;
+}
+.Delete__Button--link {
+  text-decoration: underline;
+  font-size: 20px;
+  margin-top: 12px;
+  margin-left: 10%;
+}
+.Delete__Button--mark {
+  font-size: 30px;
+  font-weight: bold;
   color: red;
 }
 .App {
   text-align: center;
 }
 .Schedules {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .Schedules__Display {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.Schedules__Display:hover {
+  background: lightblue;
 }
