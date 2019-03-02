@@ -155,6 +155,9 @@ code {
 .Schedules__Links--red:hover {
   color: red;
 }
+.App__Button {
+  margin-top: 10px;
+}
 .Delete {
   margin-left: 2%;
 }
@@ -175,6 +178,9 @@ code {
 }
 .App {
   text-align: center;
+}
+.App__h1 {
+  font-size: 2.5rem;
 }
 .Schedules {
   margin-top: 20px;

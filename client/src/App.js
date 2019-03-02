@@ -51,9 +51,9 @@ class App extends Component {
     const { schedules } = this.state;
     return (
       <div className="App">
-        <h1>Bada Tracker</h1>
+        <h1 className="App__h1">Bada Tracker</h1>
         <Link to="/">
-          <button className="btn btn-secondary" onClick={this.createASchedule}>
+          <button className="App__Button btn btn-secondary" onClick={this.createASchedule}>
             Create A New Schedule For Today
           </button>
         </Link>
