@@ -206,3 +206,10 @@ code {
 .Schedules__Display:hover {
   background: lightblue;
 }
+.Schedule {
+  height: 80vh;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  padding-top: 10px;
+  border: 1px black solid;
+}

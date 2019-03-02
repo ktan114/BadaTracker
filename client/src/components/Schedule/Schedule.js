@@ -61,7 +61,7 @@ class Schedule extends Component {
   render() {
     const { medicine, trips, currentDate, _id } = this.state.schedule;
     return (
-      <div>
+      <div className="Schedule">
         <DateDisplay strDate={currentDate} />
         <Medicine medicine={medicine} handleClick={this.handleClick} />
         <Trips trips={trips} handleClick={this.handleClick} />
