@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 
-import './App.css';
 import Schedule from './components/Schedule/Schedule';
 import AllSchedules from './components/AllSchedules/AllSchedules';
 import compareDate from './helpers/compareDate'
