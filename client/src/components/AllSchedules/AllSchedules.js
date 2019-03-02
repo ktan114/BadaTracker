@@ -14,9 +14,13 @@ const AllSchedules = props => {
         .reverse()
         .map(schedule => {
           let color = 'grey';
-          const {_id, currentDate, medicine, trips } = schedule;
+          const { _id, currentDate, medicine, trips } = schedule;
           if (medicine && trips >= 2) color = 'green';
-          if (compareDate(new Date(schedule.currentDate), new Date()) && (!medicine || trips < 2)) color = 'red';
+          if (
+            compareDate(new Date(schedule.currentDate), new Date()) &&
+            (!medicine || trips < 2)
+          )
+            color = 'red';
           return (
             <div
               key={_id}
@@ -42,7 +46,7 @@ const AllSchedules = props => {
 
 AllSchedules.propTypes = {
   schedules: PropTypes.array.isRequired,
-  getAllSchedules : PropTypes.func.isRequired
-}
+  getAllSchedules: PropTypes.func.isRequired,
+};
 
 export default AllSchedules;
