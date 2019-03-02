@@ -139,6 +139,7 @@ code {
 .Schedules__Links {
   text-decoration: none;
   font-size: 1.5rem;
+  font-weight: bold;
 }
 .Schedules__Links:hover {
   text-decoration: none;
@@ -159,7 +160,7 @@ code {
   margin-top: 10px;
 }
 .Delete {
-  margin-left: 2%;
+  margin-right: 5%;
 }
 .Delete__Button {
   border: none;
@@ -172,23 +173,35 @@ code {
   margin-left: 10%;
 }
 .Delete__Button--mark {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   color: red;
 }
+.Delete__Button--mark:hover {
+  transform: scale(1.5);
+}
 .App {
   text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: 2px dotted black;
+  min-height: 100vh;
 }
 .App__h1 {
   font-size: 2.5rem;
 }
 .Schedules {
+  display: flex;
+  flex-flow: column;
   margin-top: 20px;
 }
 .Schedules__Display {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
 }
 .Schedules__Display:hover {
   background: lightblue;
