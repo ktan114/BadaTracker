@@ -70,22 +70,22 @@ GET `api/schedules`
 
 Retrieve all schedules saved
 
-***Get A Specific Schedule By ID***
+**Get A Specific Schedule By ID**
 GET `api/schedules/:id` 
 
 Retrieves the specific schedule for that date
 
-***Create a New Schedule***
+**Create a New Schedule**
 POST `api/schedules`
 
 Creates a new schedule
 
-***Edit an Existing Schedule By ID***
+**Edit an Existing Schedule By ID**
 PUT `api/schedules/:id`
 
 Update a schedule based on its ID
 
-***Delete an Existing Schedule By ID***
+**Delete an Existing Schedule By ID**
 DELETE `api/schedules/:id`
 
 Deletes a schedule based on id
