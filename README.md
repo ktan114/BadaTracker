@@ -3,7 +3,6 @@
 Application used to keep track of Bada's Daily Schedule
 
 # Table of Contents
-
 * [Tech Stack](https://github.com/ktan114/BadaTracker/tree/kevin/readme#tech-stack)
     * [Back End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-dependencies)
     * [Front End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-dependencies)
@@ -15,7 +14,6 @@ Application used to keep track of Bada's Daily Schedule
 # Tech Stack
 
 ## Back End Dependencies
-
 - cors
 - dotenv
 - express
@@ -24,7 +22,6 @@ Application used to keep track of Bada's Daily Schedule
 - nodemon
 
 ## Front End Dependencies
-
 - axios
 - bootstrap
 - jquery
@@ -37,12 +34,10 @@ Application used to keep track of Bada's Daily Schedule
 # Environment Variables 
 
 ## Back End Variables 
-
 - `localPath`: Path used during development
 - `herokuPath`: Path used during production
 
 ## Front End Variables
-
 - `localURI`: URI used during development
 - `mLabURI`: URI used during production
 
