@@ -7,10 +7,11 @@ import DeleteSchedule from '../DeleteSchedule/DeleteSchedule';
 import compareDate from '../../helpers/compareDate';
 
 const AllSchedules = props => {
+  const { display, schedules } = props;
   return (
     <div className="Schedules">
-      {props.schedules
-        .slice(0)
+      {schedules
+        .slice(display ? (schedules.length >= 7 ? schedules.length - 7 : 0) : 0)
         .reverse()
         .map(schedule => {
           let linkColor = 'Schedules__Links--grey';
@@ -44,6 +45,7 @@ const AllSchedules = props => {
 AllSchedules.propTypes = {
   schedules: PropTypes.array.isRequired,
   getAllSchedules: PropTypes.func.isRequired,
+  display: PropTypes.bool.isRequired,
 };
 
 export default AllSchedules;
