@@ -156,6 +156,11 @@ code {
 .Schedules__Links--red:hover {
   color: red;
 }
+.Schedules__Links--black,
+.Schedules__Links--black:hover {
+  color: black;
+  font-weight: normal;
+}
 .App__Button {
   margin-top: 10px;
 }
@@ -196,6 +201,10 @@ code {
   margin-top: 5px;
   color: red;
 }
+.Schedule__Button {
+  border: none;
+  background: none;
+}
 .Medicine__Input {
   margin-left: 2%;
   margin-bottom: 4px;
@@ -231,10 +240,15 @@ code {
   font-size: 1.5rem;
   margin-top: 10px;
   padding-top: 10px;
-  border: 1px black solid;
 }
 .Schedule__Date {
   margin-bottom: 10px;
+}
+.Schedule__Buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
 }
 .Medicine {
   display: flex;
