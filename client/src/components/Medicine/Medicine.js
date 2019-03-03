@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 const Medicine = props => {
   return (
-    <div>
-      <label htmlFor="medicine">Medicine: </label>
+    <div className="Medicine">
+      <label className="Medicine__Label" htmlFor="medicine">Medicine: </label>
       <input
         onChange={() => props.handleClick('medicine')}
         type="checkbox"
         name="medicine"
         checked={props.medicine}
+        className="Medicine__Input"
       />
     </div>
   );

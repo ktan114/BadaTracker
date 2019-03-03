@@ -1,0 +1,264 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.Schedules__Links {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.Schedules__Links:hover {
+  text-decoration: none;
+}
+.Schedules__Links--grey,
+.Schedules__Links--grey:hover {
+  color: grey;
+}
+.Schedules__Links--green,
+.Schedules__Links--green:hover {
+  color: green;
+}
+.Schedules__Links--red,
+.Schedules__Links--red:hover {
+  color: red;
+}
+.Schedules__Links--black,
+.Schedules__Links--black:hover {
+  color: black;
+  font-weight: normal;
+}
+.App__Button {
+  margin-top: 10px;
+}
+.Delete__Button {
+  border: none;
+  background: none;
+}
+.Delete__Button--link {
+  text-decoration: underline;
+  font-size: 20px;
+  margin-top: 12px;
+  margin-left: 10%;
+}
+.Delete__Button--mark {
+  font-size: 35px;
+  font-weight: bold;
+  color: red;
+}
+.Delete__Button--mark:hover {
+  transform: scale(1.5);
+}
+.Trips__Container {
+  display: flex;
+  justify-content: space-around;
+}
+.Trips__Button {
+  border: none;
+  font-size: 50px;
+  width: 20%;
+}
+.Trips__Button--green {
+  color: green;
+}
+.Trips__Button--red {
+  margin-top: 5px;
+  color: red;
+}
+.Schedule__Button {
+  border: none;
+  background: none;
+}
+.Medicine__Input {
+  margin-left: 2%;
+  margin-bottom: 4px;
+}
+.App {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: 2px dotted black;
+  min-height: 100vh;
+}
+.App__h1 {
+  font-size: 2.5rem;
+}
+.Schedules {
+  display: flex;
+  flex-flow: column;
+  margin-top: 20px;
+}
+.Schedules__Display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+  transition: all 0.2s ease-in-out;
+}
+@media only screen and (min-width: 760px) {
+  .Schedules__Display:hover {
+    background: lightblue;
+  }
+}
+.Schedule {
+  height: 80vh;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.Schedule__Date {
+  margin-bottom: 10px;
+}
+.Schedule__Buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+.Medicine {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+.Trips {
+  margin-top: 10px;
+}
+.Trips__h1 {
+  margin-top: 18px;
+}

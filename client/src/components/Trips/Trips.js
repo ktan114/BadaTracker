@@ -3,18 +3,12 @@ import PropTypes from 'prop-types';
 
 const Trips = props => {
 
-  const styleButton = {
-    border: 'none',
-    fontSize: '50px',
-    width: '20%',
-  }
-
   return (
-    <div>
-      <h1>Trips: {props.trips}</h1>
-      <div style={{ display: 'flex', justifyContent: 'space-around', width: '50%', marginLeft: '23%' }}>
-        <button style={{...styleButton, color: 'green' }} onClick={() => props.handleClick(1)}>+</button>
-        <button style={{...styleButton, color: 'red'}} onClick={() => props.handleClick(-1)}>-</button>
+    <div className="Trips">
+      <div className="Trips__Container">
+        <button className="Trips__Button Trips__Button--green" onClick={() => props.handleClick(1)}>+</button>
+        <h1 className="Trips__h1">Trips: {props.trips}</h1>
+        <button className="Trips__Button Trips__Button--red"  onClick={() => props.handleClick(-1)}>-</button>
       </div>
     </div>
   );

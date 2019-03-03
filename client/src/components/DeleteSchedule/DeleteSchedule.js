@@ -14,25 +14,12 @@ const DeleteSchedule = props => {
       .catch(() => console.log('Error'));
   };
 
-  const deleteMark = {
-    border: 'none',
-    fontSize: '30px',
-    color: 'red',
-    fontWeight: 'bold',
-  };
-
-  const deleteLink = {
-    border: 'none',
-    textDecoration: 'underline',
-    fontSize: '20px',
-    marginTop: '12px',
-    marginLeft: '10%'
-  };
-
   return (
-    <div style={{ marginTop: '8px', marginLeft: '1%' }}>
+    <div className="Delete">
       <button
-        style={props.delete ? deleteMark : deleteLink}
+        className={`Delete__Button ${
+          props.delete ? 'Delete__Button--mark' : 'Delete_Button--link'
+        }`}
         onClick={() => handleDelete(props.id)}
       >
         {props.delete ? <React.Fragment>&times;</React.Fragment> : 'Delete'}
@@ -44,7 +31,7 @@ const DeleteSchedule = props => {
 DeleteSchedule.propTypes = {
   id: PropTypes.string.isRequired,
   getAllSchedules: PropTypes.func.isRequired,
-  delete: PropTypes.bool.isRequired
+  delete: PropTypes.bool.isRequired,
 };
 
 export default DeleteSchedule;

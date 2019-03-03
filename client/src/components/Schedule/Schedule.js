@@ -61,17 +61,17 @@ class Schedule extends Component {
   render() {
     const { medicine, trips, currentDate, _id } = this.state.schedule;
     return (
-      <div>
-        <DateDisplay strDate={currentDate} />
+      <div className="Schedule">
+        <div className="Schedule__Date">
+          <DateDisplay strDate={currentDate} />
+        </div>
         <Medicine medicine={medicine} handleClick={this.handleClick} />
         <Trips trips={trips} handleClick={this.handleClick} />
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button
-            style={{ marginTop: '20px', border: 'none', fontSize: '20px' }}
-          >
+        <div className="Schedule__Buttons">
+          <button className="Schedule__Button">
             <Link
               onClick={this.props.getAllSchedules}
-              style={{ color: 'black' }}
+              className="Schedules__Links Schedules__Links--black"
               to="/"
             >
               Back

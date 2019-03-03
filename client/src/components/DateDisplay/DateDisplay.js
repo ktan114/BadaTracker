@@ -23,7 +23,7 @@ const DateDisplay = props => {
           '/' +
           date.getDate() +
           '/' +
-          date.getFullYear()}
+          (date.getFullYear()-2000)}
       </h3>
     </div>
   );

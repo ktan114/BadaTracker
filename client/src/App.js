@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 
-import './App.css';
 import Schedule from './components/Schedule/Schedule';
 import AllSchedules from './components/AllSchedules/AllSchedules';
 import compareDate from './helpers/compareDate';
@@ -57,9 +56,9 @@ class App extends Component {
     const { schedules, display } = this.state;
     return (
       <div className="App">
-        <h1>Bada Tracker</h1>
+        <h1 className="App__h1">Bada Tracker</h1>
         <Link to="/">
-          <button onClick={this.displaySchedule}>
+          <button className="App__Button btn btn-secondary" onClick={this.displaySchedule}>
             {display ? (
               <React.Fragment>See All Schedules</React.Fragment>
             ) : (

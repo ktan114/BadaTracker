@@ -9,26 +9,23 @@ import compareDate from '../../helpers/compareDate';
 const AllSchedules = props => {
   const { display, schedules } = props;
   return (
-    <div>
+    <div className="Schedules">
       {schedules
         .slice(display ? (schedules.length >= 7 ? schedules.length - 7 : 0) : 0)
         .reverse()
         .map(schedule => {
-          let color = 'grey';
+          let linkColor = 'Schedules__Links--grey';
           const { _id, currentDate, medicine, trips } = schedule;
-          if (medicine && trips >= 2) color = 'green';
+          if (medicine && trips >= 2) linkColor = 'Schedules__Links--green';
           if (
             compareDate(new Date(schedule.currentDate), new Date()) &&
             (!medicine || trips < 2)
           )
-            color = 'red';
+            linkColor = 'Schedules__Links--red';
           return (
-            <div
-              key={_id}
-              style={{ display: 'flex', justifyContent: 'center' }}
-            >
+            <div key={_id} className="Schedules__Display">
               <Link
-                style={{ textDecoration: 'none', color: color }}
+                className={`Schedules__Links ${linkColor}`}
                 to={`/schedules/${_id}`}
               >
                 <DateDisplay strDate={currentDate} />
@@ -48,7 +45,7 @@ const AllSchedules = props => {
 AllSchedules.propTypes = {
   schedules: PropTypes.array.isRequired,
   getAllSchedules: PropTypes.func.isRequired,
-  display: PropTypes.bool.isRequired
+  display: PropTypes.bool.isRequired,
 };
 
 export default AllSchedules;
