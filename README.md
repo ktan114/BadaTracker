@@ -4,8 +4,8 @@ Application used to keep track of Bada's Daily Schedule
 
 # Table of Contents
 * [Tech Stack](https://github.com/ktan114/BadaTracker/tree/kevin/readme#tech-stack)
-  * [Back End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-dependencies)
-  * [Front End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-dependencies)
+* [Back End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-dependencies)
+* [Front End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-dependencies)
 
 * [Environment Variables](https://github.com/ktan114/BadaTracker/tree/kevin/readme#environment-variables)
   * [Back End Variables](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-variables)
