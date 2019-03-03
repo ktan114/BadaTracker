@@ -180,6 +180,22 @@ code {
 .Delete__Button--mark:hover {
   transform: scale(1.5);
 }
+.Trips__Container {
+  display: flex;
+  justify-content: space-around;
+}
+.Trips__Button {
+  border: none;
+  font-size: 50px;
+  width: 20%;
+}
+.Trips__Button--green {
+  color: green;
+}
+.Trips__Button--red {
+  margin-top: 5px;
+  color: red;
+}
 .Medicine__Input {
   margin-left: 2%;
   margin-bottom: 4px;
@@ -225,4 +241,11 @@ code {
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 10px;
+  margin-top: 40px;
+}
+.Trips {
+  margin-top: 10px;
+}
+.Trips__h1 {
+  margin-top: 18px;
 }
