@@ -4,16 +4,20 @@ Application used to keep track of Bada's Daily Schedule
 
 # Table of Contents
 - [Tech Stack](https://github.com/ktan114/BadaTracker/tree/kevin/readme#tech-stack)
-
     - [Back End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-dependencies)
-
     - [Front End Dependencies](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-dependencies)
 
 - [Environment Variables](https://github.com/ktan114/BadaTracker/tree/kevin/readme#environment-variables)
-
-    - [Back End Variables](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-variables)
-
+    - [Front End Variables](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-variables)
     - [Back End Variables](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-variables)
+
+- [Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#scripts)
+    - [Back End Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-scripts)
+    - [Front End Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-scripts)
+
+- [API Documentation](https://github.com/ktan114/BadaTracker/tree/kevin/readme#api-documentation)
+    - [Back End Routes](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-routes)
+        -[Schedule Routes](https://github.com/ktan114/BadaTracker/tree/kevin/readme#schedule-routes)
 
 # Tech Stack
 
@@ -54,3 +58,29 @@ Application used to keep track of Bada's Daily Schedule
 ## Front End Scripts
 - `yarn start`: Start the React project
 - `yarn less`: Start the LESS compiler
+
+# API Documentation
+
+## Back End Routes
+
+### Schedule Routes
+
+GET `api/schedules`
+
+Retrieve all schedules saved
+
+GET `api/schedules/:id` 
+
+Retrieves the specific schedule for that date
+
+POST `api/schedules`
+
+Creates a new schedule
+
+PUT `api/schedules/:id`
+
+Update a schedule based on its ID
+
+DELETE `api/schedules/:id`
+
+Deletes a schedule based on id
