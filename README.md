@@ -65,7 +65,7 @@ Application used to keep track of Bada's Daily Schedule
 
 ### Schedule Routes
 
-***Get All Schedules***
+**Get All Schedules**
 GET `api/schedules`
 
 Retrieve all schedules saved
