@@ -12,8 +12,8 @@ Application used to keep track of Bada's Daily Schedule
     - [Back End Variables](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-variables)
 
 - [Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#scripts)
-    - [Back End Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-scripts)
-    - [Front End Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-scripts)
+    * [Back End Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-scripts)
+    * [Front End Scripts](https://github.com/ktan114/BadaTracker/tree/kevin/readme#front-end-scripts)
 
 - [API Documentation](https://github.com/ktan114/BadaTracker/tree/kevin/readme#api-documentation)
     - [Back End Routes](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-routes)
