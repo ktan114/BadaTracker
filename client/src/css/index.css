@@ -180,6 +180,10 @@ code {
 .Delete__Button--mark:hover {
   transform: scale(1.5);
 }
+.Medicine__Input {
+  margin-left: 2%;
+  margin-bottom: 4px;
+}
 .App {
   text-align: center;
   margin: 10px;
@@ -212,4 +216,13 @@ code {
   margin-top: 10px;
   padding-top: 10px;
   border: 1px black solid;
+}
+.Schedule__Date {
+  margin-bottom: 10px;
+}
+.Medicine {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 10px;
 }
