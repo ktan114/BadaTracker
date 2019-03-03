@@ -229,8 +229,10 @@ code {
   margin-bottom: 15px;
   transition: all 0.2s ease-in-out;
 }
-.Schedules__Display:hover {
-  background: lightblue;
+@media only screen and (min-width: 760px) {
+  .Schedules__Display:hover {
+    background: lightblue;
+  }
 }
 .Schedule {
   height: 80vh;
