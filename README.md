@@ -17,7 +17,7 @@ Application used to keep track of Bada's Daily Schedule
 
 - [API Documentation](https://github.com/ktan114/BadaTracker/tree/kevin/readme#api-documentation)
     - [Back End Routes](https://github.com/ktan114/BadaTracker/tree/kevin/readme#back-end-routes)
-        -[Schedule Routes](https://github.com/ktan114/BadaTracker/tree/kevin/readme#schedule-routes)
+        - [Schedule Routes](https://github.com/ktan114/BadaTracker/tree/kevin/readme#schedule-routes)
 
 # Tech Stack
 
