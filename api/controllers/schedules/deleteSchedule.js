@@ -2,7 +2,7 @@ const Schedule = require('../../models/Schedule');
 
 /*
     @route  DELETE api/schedules/:id
-    @desc   Deletes a schedule based on id
+    @desc   Deletes a schedule based on its ID
     @access Public (Development) | Private (Production)
 */
 
