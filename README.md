@@ -97,5 +97,5 @@ Update a schedule based on its ID
 ```
 DELETE `api/schedules/:id`
 
-Deletes a schedule based on id
+Deletes a schedule based on its ID
 ```
